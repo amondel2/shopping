@@ -1,8 +1,5 @@
-var processing = false;
 $(document).on('click',"button[name='cartBtn']",function(e) {
-    if(processing) {return;}
     try {
-        processing = true;
         let currentElement = $(e.currentTarget);
         let itemId = $(currentElement).attr('id').replaceAll("addcartbtn_", "");
         //see if this item is already in the cart
@@ -14,7 +11,6 @@ $(document).on('click',"button[name='cartBtn']",function(e) {
     } catch (e) {
         console.error(e.message);
     }
-    processing = false;
 });
 
 function updateCart(itemId,qtyToAdd) {

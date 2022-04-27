@@ -32,7 +32,7 @@ class CartService {
                             return null
                         }
                         updateQty(qty, item)
-                        def cost = item.cost * qty
+                        def cost = item.cost + qty
                         def taxCost = calculateTax(!skipTax && item.item.itemType.isTaxble, item, cost)
                         new StoreItem( id: item.id,description: item.toString(),quantity: qty, taxCost: taxCost , baseCost: cost + taxCost)
                     } catch (Exception e) {
@@ -69,7 +69,4 @@ class CartService {
         }
         taxAmount
     }
-
-
-
 }

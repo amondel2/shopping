@@ -10,7 +10,7 @@ class Utils {
     }
 
     def round5up(BigDecimal z) {
-        def x = Math.ceil(z * 100).toInteger()
+        def x = Math.floor(z * 100).toInteger()
         x = x + ( 5 - ( x % 5 ?: 5 ) )
         x / 100
     }

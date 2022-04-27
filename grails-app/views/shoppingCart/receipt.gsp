@@ -20,6 +20,8 @@
             <label class="text-left" style="width: 75%">Total: $${((store?.baseCost?.sum())?.trunc(2)) ?: '0.00'}</label>
         </div>
     </div>
+    <div><button id="buyMore" class="btn-primary btn">Buy More Stuff</button> </div>
 </div>
+<asset:javascript src="buy.js" />
 </body>
 </html>
